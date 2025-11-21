@@ -1,21 +1,29 @@
-This repository contains Manual Test Cases, UI Automation, and API Automation for:
-✔ Flow 0 — Sign In
-Combining API + functional provides full coverage of the authentication flow, ensuring both frontend and backend work together correctly.
 
-✔ Flow 1 — Equipment Inspection Form
-Functional UI Testing gives full coverage with the least friction and ensure the form behaves correctly from a user's perspective.
+# **WeMine – Manual Test Cases, UI Automation & API Automation**
 
-✔ Flow 2 — Safety Hazard Report
-Functional UI Testing gives full coverage with the least friction and ensure the form behaves correctly from a user's perspective.
+This repository contains **Manual Test Cases**, **UI Automation**, and **API Automation** for the WeMine application.
 
-Automation is implemented using Playwright (TypeScript) with support for:
-✔ Web automation
-✔ API automation
-✔ Page Object Model (POM)
-✔ Hooks, Steps, Models, and Utilities
+✔ Flow 0 — **Sign In**  
+Combines **API + functional testing** to ensure authentication works correctly across backend and frontend.
+
+✔ Flow 1 — **Equipment Inspection Form**  
+Functional UI testing ensures dynamic fields behave correctly and validations work properly.
+
+✔ Flow 2 — **Safety Hazard Report**  
+Functional UI testing ensures the entire hazard reporting workflow performs as expected.
+
+Automation uses **Playwright (TypeScript)** and includes:  
+✔ Web automation  
+✔ API automation  
+✔ Page Object Model (POM)  
+✔ Hooks, Steps, Models, Utilities  
 ✔ Allure Reporting
 
-📁 Repository Structure
+---
+
+## **📁 Repository Structure**
+
+```
 testcases/
 ├── manual/
 │   ├── TC/
@@ -31,6 +39,7 @@ testcases/
 │   ├── reports/
 │   │     ├── allure-report/
 │   │     ├── allure-results/
+│   │
 │   ├── tests/
 │   │     ├── features/
 │   │     ├── hooks/
@@ -39,113 +48,140 @@ testcases/
 │   │     ├── pages/
 │   │     ├── steps/
 │   │     ├── utils/
+```
 
+---
 
-📝 Manual Test Cases
+## **📝 Manual Test Cases**
 
-Manual test cases are stored in:
-📂 manual/TC/
-Each file contains structured test steps, expected results, and coverage for both positive and negative scenarios.
+Manual test cases are located in:
 
-Evidence of execution (screenshots, videos, and logs) is placed under:
-📂 manual/Evidence/<TC_GROUP_ID>/
+📂 `manual/TC/`
 
+Each file covers full positive and negative test scenarios with structured steps and validations.
 
-🤖 Automation Overview (Playwright)
+Execution evidence (screenshots, logs, recordings) is stored in:
 
-Automation uses Playwright (TypeScript) to handle:
-✔ UI Testing (Web + Mobile Emulation)
-✔ API Testing
-✔ POM Structure
-✔ BDD-Style Folder Organization
-✔ Allure Reporting
+📂 `manual/Evidence/<TC_GROUP_ID>/`
+
+---
+
+## **🤖 Automation Overview (Playwright)**
+
+This project uses **Playwright (TypeScript)** for:
+
+✔ UI Testing (Web + Mobile viewport simulation)  
+✔ API Testing  
+✔ Page Object Model (POM)  
+✔ BDD-style folder organization  
+✔ Allure reporting
 
 Automation code is located in:
-📂 automation/tests/
 
+📂 `automation/tests/`
 
-Below is an explanation of each component under automation/tests/.
+---
 
-📂 features/
+## **📂 features/**
 
-Contains feature files describing system behavior in a Gherkin-like style.
+Contains feature-style scenario descriptions defining system behavior.
 
+---
 
-📂 pages/ (Page Object Model)
+## **📂 pages/**  
+**(Page Object Model)**
 
-Stores UI interaction logic and page abstractions.
+Stores UI interaction logic.
 
 Example files:
 
+```
 pages/
 ├── login.page.ts
 ├── equipment-inspection.page.ts
 └── hazard-report.page.ts
+```
 
+---
 
-📂 objectRepository/
+## **📂 objectRepository/**
 
-Contains a centralized repository of selectors/locators, separate from POM logic.
+Central storage for selectors and locators used by Page Objects.
 
+---
 
-📂 steps/
+## **📂 steps/**
 
-Contains step definition files that bind feature steps to actual automation code.
+Houses step definitions linking feature scenarios to Playwright automation logic.
 
+---
 
-📂 models/
+## **📂 models/**
 
-Contains TypeScript interfaces and data models for:
-✔ API payloads
-✔ UI form datasets
+Contains TypeScript interfaces and data models:
+
+✔ API payload schemas  
+✔ UI form data structures  
 
 Example:
 
+```
 models/
 ├── login.model.ts
 ├── equipment.model.ts
 └── hazard.model.ts
+```
 
-📂 hooks/
+---
 
-Contains global configuration:
-✔ Test initialization
-✔ Browser setup
-✔ Authentication hooks
-✔ Screenshot on failure
-✔ Cleanup routines
+## **📂 hooks/**
 
-📂 utils/
+Includes base test configuration:
 
-General-purpose utilities such as:
-✔ API client wrapper
-✔ File upload helpers
-✔ Data generators
-✔ Date formatter
-✔ Randomizers
+✔ Setup  
+✔ Teardown  
+✔ Browser lifecycle  
+✔ Screenshot on failure  
+✔ Context initialization  
 
+---
 
-📊 Allure Reporting
+## **📂 utils/**
 
-Allure is integrated to generate rich, interactive test reports including:
-✔ Step logs
-✔ Screenshots
-✔ API request/response attachments
-✔ Error stack traces
-✔ Scenario breakdown
-✔ Summary dashboard
+Utility helpers:
 
-All reports are stored in:
-automation/reports/
+✔ API client wrapper  
+✔ File operations  
+✔ Data/time formatters  
+✔ Random value generators  
 
+---
 
-🏁 Summary
+## **📊 Allure Reporting**
+
+Allure is used to generate rich test reports containing:
+
+✔ Logs  
+✔ Screenshots  
+✔ API requests/responses  
+✔ Step tracing  
+✔ Error stack traces  
+✔ Dashboard summary  
+
+Reports are stored in:
+
+📂 `automation/reports/`
+
+---
+
+## **🏁 Summary**
 
 This repository provides:
-✔ Full manual test coverage
-✔ UI automation using Playwright + POM
-✔ API automation with Playwright’s API client
-✔ Clear BDD-style separation
-✔ Centralized locators and utilities
-✔ Allure reporting for detailed analysis
-✔ Clean, scalable folder structure for long-term maintenance
+
+✔ Full manual test coverage  
+✔ Web UI automation using Playwright + POM  
+✔ API automation with Playwright API client  
+✔ Clear BDD-style test organization  
+✔ Reusable models, utilities, and hooks  
+✔ Integrated Allure reporting  
+✔ Clean, scalable folder structure  
